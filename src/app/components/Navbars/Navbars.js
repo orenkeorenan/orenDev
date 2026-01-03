@@ -1,17 +1,22 @@
 "use client"
 
 import React, { useState } from 'react'
-import { useLanguage } from '@/app/context/LanguageContext';
-import { LANGUAGES } from '@/app/i18n';
-import LangToggle from '../LangToggle/LangToggle';
-import HireMeModal from '../HireModal/HireModal';
+import { useRouter } from 'next/navigation'
+import { useLanguage } from '@/app/context/LanguageContext'
+import { LANGUAGES } from '@/app/i18n'
+import LangToggle from '../LangToggle/LangToggle'
+import HireMeModal from '../HireModal/HireModal'
 
-function Navbars() {
-    const {language, setLanguage} = useLanguage();
-    const t = LANGUAGES[language];
+export default function Navbars() {
+    const { language } = useLanguage()
+    const t = LANGUAGES[language]
+    const router = useRouter()
+    const [open, setOpen] = useState(false)
 
-    const [open, setOpen] = useState(false);
-
+    const handleLogoClick = () => {
+        router.replace('/') // reset URL
+        window.scrollTo({ top: 0, behavior: 'smooth' }) // optional smooth scroll
+    }
 
     return (
         <>
@@ -27,6 +32,7 @@ function Navbars() {
                     backgroundColor: '#ffffff',
                 }}
             >
+                {/* Logo */}
                 <div
                     style={{
                         position: 'absolute',
@@ -37,10 +43,12 @@ function Navbars() {
                         letterSpacing: '0.5px',
                         cursor: 'pointer',
                     }}
+                    onClick={handleLogoClick}
                 >
                     {t.brand.logo}
                 </div>
 
+                {/* Right Controls */}
                 <div
                     style={{
                         display: 'flex',
@@ -61,7 +69,7 @@ function Navbars() {
                             fontWeight: '500',
                             cursor: 'pointer',
                         }}
-                        onClick={()=> setOpen(true)}
+                        onClick={() => setOpen(true)}
                     >
                         {t.actions.hireMe}
                     </button>
@@ -70,7 +78,5 @@ function Navbars() {
 
             <HireMeModal open={open} onClose={() => setOpen(false)} />
         </>
-  )
+    )
 }
-
-export default Navbars

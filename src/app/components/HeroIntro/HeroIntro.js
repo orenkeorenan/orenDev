@@ -5,10 +5,10 @@ import { LANGUAGES } from '@/app/i18n'
 import React from 'react'
 
 function HeroIntro() {
-    const { language } = useLanguage()   // ✅ destructure
-    const t = LANGUAGES[language]        // ✅ now valid
+    const { language } = useLanguage()   
+    const t = LANGUAGES[language]        
 
-    if (!t) return null                  // 🛡 safety
+    if (!t) return null                  
 
     return (
         <div
@@ -17,7 +17,6 @@ function HeroIntro() {
                 display: 'flex',
                 gap: '2rem',
                 alignItems: 'center',
-                justifyContent: 'center',
             }}
         >
             <div
@@ -32,7 +31,7 @@ function HeroIntro() {
                 }}
             >
                 <img
-                    src={t.hero.image}   // ✅ use language image
+                    src={t.hero.image}   
                     alt="Profile"
                     style={{
                         width: '100%',
