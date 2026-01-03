@@ -1,4 +1,3 @@
-// app/config/folders.js
 import Portfolio from '@/app/components/FolderContent/Portfolio'
 import Skills from '@/app/components/FolderContent/Skills'
 import About from '@/app/components/FolderContent/About'

@@ -1,6 +1,6 @@
-"use client" // client-only
+"use client"
 
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 
 import FolderContent from './components/FolderContent/FolderContent'
@@ -16,7 +16,7 @@ export default function Home() {
 
   // Initialize folder from URL query param
   const initialTab = searchParams?.get('tab') || 'portfolio'
-  const [activeFolder, setActiveFolder] = useState<string>(initialTab)
+  const [activeFolder, setActiveFolder] = useState(initialTab)
 
   // Keep state in sync if URL changes externally
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function Home() {
   }, [searchParams])
 
   // Update state and URL when user switches folder
-  const handleFolderChange = (tab: string) => {
+  const handleFolderChange = (tab) => {
     if (!searchParams) return
 
     const params = new URLSearchParams(searchParams.toString())
