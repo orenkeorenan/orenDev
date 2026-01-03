@@ -15,7 +15,6 @@ function Navbars() {
 
     return (
         <>
-        
             <nav
                 style={{
                     position: 'relative',
@@ -39,7 +38,7 @@ function Navbars() {
                         cursor: 'pointer',
                     }}
                 >
-                    {t.logo}
+                    {t.brand.logo}
                 </div>
 
                 <div
@@ -64,7 +63,7 @@ function Navbars() {
                         }}
                         onClick={()=> setOpen(true)}
                     >
-                        {t.hireMe}
+                        {t.actions.hireMe}
                     </button>
                 </div>
             </nav>

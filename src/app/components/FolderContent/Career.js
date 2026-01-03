@@ -1,3 +1,5 @@
+"use client"
+
 import { useLanguage } from "@/app/context/LanguageContext"
 import { LANGUAGES } from "@/app/i18n"
 

@@ -3,7 +3,7 @@
 export default function Section({ title, children }) {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <div
+            {/* <div
                 style={{
                     fontSize: '14px',
                     fontWeight: 700,
@@ -11,7 +11,7 @@ export default function Section({ title, children }) {
                 }}
             >
                 {title}
-            </div>
+            </div> */}
             {children}
         </div>
     )

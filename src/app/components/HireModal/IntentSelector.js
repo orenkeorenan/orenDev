@@ -11,7 +11,6 @@ function IntentCard({ active, title, description, onClick }) {
                 cursor: 'pointer',
                 border: active ? '2px solid #111827' : '1px solid #e5e7eb',
                 backgroundColor: active ? '#f9fafb' : '#ffffff',
-                transition: 'all 0.2s ease',
             }}
         >
             <div style={{ fontWeight: 700, marginBottom: '4px' }}>
@@ -24,20 +23,20 @@ function IntentCard({ active, title, description, onClick }) {
     )
 }
 
-export default function IntentSelector({ intent, onChange }) {
+export default function IntentSelector({ intent, onChange, t }) {
     return (
         <div style={{ display: 'flex', gap: '12px', marginBottom: '32px' }}>
             <IntentCard
                 active={intent === 'fulltime'}
-                title="Full-time role"
-                description="Permanent or long-term positions"
+                title={t.fulltime.title}
+                description={t.fulltime.desc}
                 onClick={() => onChange('fulltime')}
             />
 
             <IntentCard
                 active={intent === 'freelance'}
-                title="Freelance / Contract"
-                description="Short-term or project-based work"
+                title={t.freelance.title}
+                description={t.freelance.desc}
                 onClick={() => onChange('freelance')}
             />
         </div>
