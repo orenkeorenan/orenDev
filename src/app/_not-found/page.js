@@ -1,4 +1,10 @@
-import InteractiveWidget from './InteractiveWidget'
+import dynamic from 'next/dynamic'
+
+// Dynamically import the client component, no SSR
+const InteractiveWidget = dynamic(
+  () => import('./InteractiveWidget'),
+  { ssr: false } // important: disable server-side rendering
+)
 
 export default function NotFoundPage() {
   return (
