@@ -1,0 +1,21 @@
+GitHub commit pertama 
+
+Check .env ga di commit dulu dari .gitignore 
+
+terus
+git init
+git status (check untracked files, kalo ud aman baru lanjut)
+git remote add origin https://github.com/user/project.git
+
+terus pindah dari master -> main
+git branch -M main
+
+Karena ini first commit, jadi langsung di push
+git push -u origin main
+
+------------------------------------------
+untuk daily push 
+git init
+git add .
+git commit -m "commit first"
+git push

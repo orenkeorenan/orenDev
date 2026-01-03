@@ -1,66 +1,71 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client"
+
+import React, { useState, useEffect } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
+
+import FolderContent from './components/FolderContent/FolderContent'
+import HeroIntro from './components/HeroIntro/HeroIntro'
+import FolderTabs from './components/FolderTabs/FolderTabs'
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
+    const router = useRouter()
+    const searchParams = useSearchParams()
+
+    const urlTab = searchParams.get('tab') || 'portfolio'
+
+    const [activeFolder, setActiveFolder] = useState(urlTab)
+
+    // URL → state
+    useEffect(() => {
+        if (urlTab !== activeFolder) {
+            setActiveFolder(urlTab)
+        }
+    }, [urlTab])
+
+    // state → URL
+    function handleFolderChange(tab) {
+        const params = new URLSearchParams(searchParams.toString())
+        params.set('tab', tab)
+        router.replace(`?${params.toString()}`)
+        setActiveFolder(tab)
+    }
+
+    return (
+        <div
+            style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+            }}
+        >
+            <HeroIntro />
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    padding: '2rem 0',
+                    width: '100%',
+                    alignItems: 'center',
+                }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+                <FolderTabs
+                    activeFolder={activeFolder}
+                    setActiveFolder={handleFolderChange}
+                />
+
+                <div
+                    style={{
+                        width: '50rem',
+                        height: '30rem',
+                        backgroundColor: '#f9fafb',
+                        border: '1px solid #e5e7eb',
+                        borderRadius: '0.5rem',
+                        padding: '1.5rem',
+                    }}
+                >
+                    <FolderContent activeFolder={activeFolder} />
+                </div>
+            </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    )
 }
