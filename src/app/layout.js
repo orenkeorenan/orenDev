@@ -1,9 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbars from "./components/Navbars/Navbars";
-import { LanguageProvider } from "./context/LanguageContext";
-
-
+import { Suspense } from "react";
+import ClientLayout from "./ClientLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +22,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-          <LanguageProvider>
-            <Navbars />
-            {children}
-          </LanguageProvider>
+        <Suspense fallback={null}>
+          <ClientLayout>{children}</ClientLayout>
+        </Suspense>
       </body>
     </html>
   );
