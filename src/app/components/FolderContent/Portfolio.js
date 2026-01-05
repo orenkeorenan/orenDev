@@ -9,69 +9,119 @@ export default function Portfolio() {
 
   return (
     <div
-        style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "1.25rem",
-            maxWidth: "640px",
-            padding: "1rem",
-        }}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "2rem",
+        maxWidth: "680px",
+        padding: "1.25rem",
+      }}
     >
-        {/* Tech summary */}
+        {/* Summary */}
         <div
             style={{
-                fontSize: "0.95rem",
-                lineHeight: 1.6,
-                color: "#555",
+            fontSize: "0.95rem",
+            lineHeight: 1.7,
+            color: "#4b5563",
             }}
         >
             {t.summary}
         </div>
 
-        {/* Project */}
-        <div>
+        {/* Project card */}
+        <div
+            style={{
+            border: "1px solid #e5e7eb",
+            borderRadius: "14px",
+            padding: "1.25rem",
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
+            }}
+        >
+            {/* Header */}
+            <div
+            style={{
+                display: "flex",
+                gap: "1rem",
+                alignItems: "flex-start",
+            }}
+            >
+            {/* Logo placeholder */}
             <div
                 style={{
-                    display: "flex",
-                    gap: "1rem",
-                    alignItems: "flex-start",
+                width: "56px",
+                height: "56px",
+                borderRadius: "12px",
+                backgroundColor: "#f3f4f6",
+                flexShrink: 0,
+                }}
+            />
+
+            {/* Text */}
+            <div
+                style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.4rem",
                 }}
             >
                 <div
-                    style={{
-                        width: "4rem",
-                        height: "4rem",
-                        borderRadius: "8px",
-                        backgroundColor: "#e5e5e5",
-                        flexShrink: 0,
-                    }}
-                />
-                <div
-                    style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "0.35rem",
-                    }}
+                style={{
+                    fontSize: "1.05rem",
+                    fontWeight: 600,
+                    color: "#111827",
+                }}
                 >
-                    <div style={{ fontSize: "1rem", fontWeight: 600 }}>
-                        {t.manna.title}
-                    </div>
-                    <div
-                        style={{
-                            fontSize: "0.9rem",
-                            lineHeight: 1.5,
-                            color: "#666",
-                        }}
-                    >
-                        {t.manna.subtitle}
-                    </div>
+                {t.manna.title}
+                </div>
+
+                <div
+                style={{
+                    fontSize: "0.9rem",
+                    lineHeight: 1.6,
+                    color: "#6b7280",
+                }}
+                >
+                {t.manna.subtitle}
                 </div>
             </div>
-            <div>
-                #NextJS #React #NodeJS #RESTAPI #MySQL #AuthFlow #GitHub #Vercel #Railway #WebApp #FullStackBasics
+            </div>
+
+            {/* Tags */}
+            <div
+            style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "0.5rem",
+            }}
+            >
+            {[
+                "Next.js",
+                "React",
+                "Node.js",
+                "REST API",
+                "MySQL",
+                "Auth Flow",
+                "GitHub",
+                "Vercel",
+                "Railway",
+            ].map(tag => (
+                <span
+                key={tag}
+                style={{
+                    fontSize: "0.75rem",
+                    padding: "4px 10px",
+                    borderRadius: "999px",
+                    backgroundColor: "#f3f4f6",
+                    color: "#374151",
+                }}
+                >
+                {tag}
+                </span>
+            ))}
             </div>
         </div>
-        
     </div>
   )
 }

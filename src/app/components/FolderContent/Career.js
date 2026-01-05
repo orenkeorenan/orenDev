@@ -9,74 +9,83 @@ export default function Career() {
 
   return (
     <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "1.25rem",
-        maxWidth: "640px",
-        padding: "1rem",
-      }}
-    >
-      {/* Title */}
-      <div
         style={{
-          fontSize: "1.1rem",
-          fontWeight: 600,
-        }}
-      >
-        {t.title}
-      </div>
-
-      {/* Timeline */}
-      {t.timeline.map((item, index) => (
-        <div
-          key={index}
-          style={{
+            maxWidth: "680px",
+            padding: "1.25rem",
             display: "flex",
-            gap: "1rem",
-          }}
-        >
-          {/* Year */}
-          <div
+            flexDirection: "column",
+            gap: "2rem",
+        }}
+    >
+        {/* <div
             style={{
-              minWidth: "90px",
-              fontSize: "0.85rem",
-              color: "#777",
-              flexShrink: 0,
-            }}
-          >
-            {item.year}
-          </div>
-
-          {/* Content */}
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "0.25rem",
-            }}
-          >
-            <div
-              style={{
-                fontSize: "0.95rem",
+                fontSize: "1.05rem",
                 fontWeight: 600,
-              }}
-            >
-              {item.role}
-            </div>
+                color: "#111827",
+            }}
+        >
+            {t.title}
+        </div> */}
 
+        <div
+            style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "1.5rem",
+            }}
+        >
+            {t.timeline.map((item, index) => (
             <div
-              style={{
-                fontSize: "0.9rem",
-                lineHeight: 1.5,
-                color: "#555",
-              }}
+                key={index}
+                style={{
+                    display: "flex",
+                    gap: "1.25rem",
+                }}
             >
-              {item.description}
+                {/* Year */}
+                <div
+                    style={{
+                        minWidth: "88px",
+                        fontSize: "0.8rem",
+                        color: "#9ca3af",
+                        paddingTop: "2px",
+                    }}
+                >
+                    {item.year}
+                </div>
+
+                {/* Content */}
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "0.35rem",
+                        maxWidth: "520px",
+                    }}
+                >
+                    <div
+                        style={{
+                        fontSize: "0.95rem",
+                        fontWeight: 600,
+                        color: "#111827",
+                        }}
+                    >
+                        {item.role}
+                    </div>
+
+                    <div
+                        style={{
+                        fontSize: "0.9rem",
+                        lineHeight: 1.6,
+                        color: "#4b5563",
+                        }}
+                    >
+                        {item.description}
+                    </div>
+                </div>
             </div>
-          </div>
+            ))}
         </div>
-      ))}
     </div>
   )
 }

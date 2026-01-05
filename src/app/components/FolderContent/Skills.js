@@ -9,77 +9,98 @@ export default function Skills() {
 
   return (
     <div
-        style={{
+      style={{
+        maxWidth: "680px",
+        padding: "1.25rem",
+        display: "flex",
+        flexDirection: "column",
+        gap: "1.5rem",
+      }}
+    >
+        {/* Header */}
+        <div
+            style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.5rem",
+            }}
+        >
+            <div
+            style={{
+                fontSize: "1.05rem",
+                fontWeight: 600,
+                color: "#111827",
+            }}
+            >
+            {t.title}
+            </div>
+
+            <div
+            style={{
+                fontSize: "0.95rem",
+                lineHeight: 1.7,
+                color: "#6b7280",
+                maxWidth: "560px",
+            }}
+            >
+            {t.summary}
+            </div>
+        </div>
+
+        {/* Groups */}
+        <div
+            style={{
             display: "flex",
             flexDirection: "column",
             gap: "1.5rem",
-            maxWidth: "640px",
-            padding: "1rem",
-        }}
-    >
-        {/* Title */}
-        <div
-            style={{
-                fontSize: "1.1rem",
-                fontWeight: 600,
-                }}
-        >
-            {t.title}
-        </div>
-
-        {/* Summary */}
-        <div
-            style={{
-                fontSize: "0.95rem",
-                lineHeight: 1.6,
-                color: "#555",
             }}
         >
-            {t.summary}
-        </div>
-
-        {/* Skill groups */}
-        {Object.values(t.groups).map((group) => (
+            {Object.values(t.groups).map((group) => (
             <div
                 key={group.title}
                 style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "0.5rem",
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.6rem",
                 }}
             >
                 <div
-                    style={{
-                        fontSize: "0.95rem",
-                        fontWeight: 600,
-                    }}
+                style={{
+                    fontSize: "0.9rem",
+                    fontWeight: 600,
+                    color: "#374151",
+                }}
                 >
-                    {group.title}
+                {group.title}
                 </div>
 
                 <div
-                    style={{
-                        display: "flex",
-                        flexWrap: "wrap",
-                        gap: "0.5rem",
-                    }}
+                style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "0.5rem",
+                    maxWidth: "620px",
+                }}
                 >
-                    {group.items.map((item) => (
-                        <div
-                            key={item}
-                            style={{
-                                fontSize: "0.85rem",
-                                padding: "0.25rem 0.5rem",
-                                borderRadius: "6px",
-                                backgroundColor: "#f2f2f2",
-                            }}
-                        >
-                            {item}
-                        </div>
-                    ))}
+                {group.items.map((item) => (
+                    <span
+                    key={item}
+                    style={{
+                        fontSize: "0.78rem",
+                        padding: "6px 10px",
+                        borderRadius: "999px",
+                        backgroundColor: "#f3f4f6",
+                        color: "#374151",
+                        whiteSpace: "nowrap",
+                    }}
+                    >
+                    {item}
+                    </span>
+                ))}
                 </div>
             </div>
-        ))}
+            ))}
+        </div>
     </div>
   )
 }

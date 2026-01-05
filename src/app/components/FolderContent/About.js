@@ -10,16 +10,17 @@ export default function About() {
   return (
     <div
         style={{
+            maxWidth: "680px",
+            padding: "1.25rem",
             display: "flex",
             flexDirection: "column",
             gap: "1rem",
-            maxWidth: "640px",
-            padding: "1rem",
-            lineHeight: 1.6,
+            lineHeight: 1.75,
+            color: "#374151",
         }}
     >
-        <div>{t.p1}</div>
-        <div>{t.p2}</div>
+        <div style={{ maxWidth: "560px" }}>{t.p1}</div>
+        <div style={{ maxWidth: "560px" }}>{t.p2}</div>
     </div>
   )
 }

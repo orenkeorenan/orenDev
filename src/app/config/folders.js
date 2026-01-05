@@ -6,8 +6,11 @@ import Contact from '../components/FolderContent/Contact'
 
 export const FOLDERS = [
   {
-    id: 'portfolio',
+    id: "portfolio",
+    label: "Portfolio",
     Component: Portfolio,
+    paginated: true,
+    totalPages: 3,
   },
   {
     id: 'skills',
