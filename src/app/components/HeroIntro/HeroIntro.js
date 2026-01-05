@@ -6,7 +6,7 @@ import React from 'react'
 
 function HeroIntro() {
     const { language } = useLanguage()   
-    const t = LANGUAGES[language]        
+    const t = LANGUAGES[language].hero        
 
     if (!t) return null                  
 
@@ -31,7 +31,7 @@ function HeroIntro() {
                 }}
             >
                 <img
-                    src={t.hero.image}   
+                    src={t.image}   
                     alt="Profile"
                     style={{
                         width: '100%',
@@ -46,12 +46,22 @@ function HeroIntro() {
                     maxWidth: '30rem',
                     fontSize: '1.2rem',
                     lineHeight: '1.6rem',
-                    fontStyle: 'italic',
                     color: '#6b7280',
                     fontWeight: 500,
+                    display:"flex",
+                    flexDirection:"column",
+                    gap:"2rem",
+                    
                 }}
             >
-                {t.hero.intro}
+                <h2>{t.titleIntro}</h2>
+                <p
+                    style={{
+                        fontStyle:"italic"
+                    }}
+                >
+                    {t.subTitleIntro}
+                </p>
             </div>
         </div>
     )

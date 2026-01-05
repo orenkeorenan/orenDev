@@ -10,9 +10,12 @@ export const ko = {
   },
 
   hero: {
-    intro: '한국어 자기소개 문구...',
+    titleIntro: '프로덕션 환경에서 사용되는 웹 애플리케이션을 구축하는 풀스택 개발자입니다.',
+    subTitleIntro: '현대적인 JavaScript 프레임워크와 백엔드 시스템을 기반으로, 확장 가능하고 장기적으로 유지보수가 가능한 시스템 설계와 클린 코드에 집중합니다.',
     image: '/hero-ko.png',
   },
+
+
 
   folders: {
     portfolio: '포트폴리오',
@@ -21,12 +24,70 @@ export const ko = {
     career: '경력',
   },
 
-  content: {
-    portfolio: '📂 포트폴리오 개요입니다.',
-    skills: '⚡ 기술 스택과 경험.',
-    about: '👋 저에 대한 소개입니다.',
-    career: '💼 경력 사항.',
+  projects: {
+    manna: {
+      title: 'Manna',
+      subtitle:
+        '사람들이 부담 없이 소규모 모임을 만들고 참여할 수 있도록 돕는 가벼운 소셜 플랫폼입니다. 새로운 사람을 만나는 일은 복잡할 필요가 없습니다.',
+    },
   },
+
+  skills: {
+    title: '기술 스택',
+    summary:
+      'React와 Node.js를 기반으로 프론트엔드부터 백엔드, 배포까지 전체 흐름을 직접 구현하며 웹 애플리케이션을 개발합니다.',
+    groups: {
+      frontend: {
+        title: '프론트엔드',
+        items: ['React', 'HTML', 'CSS', 'JavaScript'],
+      },
+      backend: {
+        title: '백엔드',
+        items: ['Node.js', 'REST API'],
+      },
+      database: {
+        title: '데이터베이스',
+        items: ['MySQL (개인 백엔드)'],
+      },
+      deployment: {
+        title: '배포 및 인프라',
+        items: ['GitHub', 'Vercel', 'Railway'],
+      },
+    },
+  },
+
+  about: {
+    p1:
+      '실제 문제를 코드로 해결하는 데 집중하는 독학 개발자입니다. 단순한 화면 구현보다, 사용자가 서비스를 어떻게 경험하는지 — 흐름과 구조, 그리고 선택의 과정 — 를 중요하게 생각합니다.',
+    p2:
+      '혼자 계획하고 빠르게 실행하는 방식에 강점이 있으며, 필요할 때는 협업도 주저하지 않습니다. 코드를 작성할 수 있는 사람이 결국 결정을 내릴 수 있다고 믿으며, 실제 프로젝트를 통해 계속해서 더 나은 코드를 배우고 있습니다.',
+  },
+
+  career: {
+    title: '경력',
+    timeline: [
+      {
+        year: '2025 – 현재',
+        role: '자기주도 개발',
+        description:
+          'React, Node.js, MySQL을 활용한 실제 웹 애플리케이션 개발에 집중하고 있으며, IT 분야의 주니어 또는 엔트리 포지션을 적극적으로 찾고 있습니다.',
+      },
+      {
+        year: '2024 – 2025',
+        role: '개인 프로젝트 기반 경험',
+        description:
+          'Oppapost와 Kajago를 풀스택 애플리케이션으로 설계 및 개발하며, 기획부터 구현, 개선까지 전 과정을 혼자 수행했습니다.',
+      },
+      {
+        year: '2023 – 2024',
+        role: '학습 및 탐색',
+        description:
+          '독학으로 웹 개발을 시작하여, 실험과 시행착오를 통해 기초부터 점진적으로 프로젝트를 구축해 왔습니다.',
+      },
+    ],
+  },
+
+ 
 
   hireModal: {
     title: '함께 일해요',

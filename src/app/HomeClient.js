@@ -29,9 +29,18 @@ export default function HomeClient() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <HeroIntro />
-      <div style={{ padding: '2rem 0', width: '100%', alignItems: 'center' }}>
+      <div 
+        style={{ 
+          padding: '2rem 0', 
+          maxWidth:"800px",
+          alignItems: 'center' ,
+        }}>
         <FolderTabs activeFolder={activeFolder} setActiveFolder={handleFolderChange} />
-        <div style={{ width: '50rem', height: '30rem' }}>
+        <div 
+          style={{ 
+            width: '50rem', 
+            border:"1px solid grey" 
+          }}>
           <FolderContent activeFolder={activeFolder} />
         </div>
       </div>
