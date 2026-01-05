@@ -1,6 +1,5 @@
 "use client"
 
-import React from 'react'
 
 function Modal({ open, onClose, children }) {
     if (!open) return null

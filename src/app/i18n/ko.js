@@ -8,6 +8,7 @@ export const ko = {
     submit: '제출',
     cancel: '취소',
     sending: '전송 중…',
+    close: '닫힘',
   },
 
 

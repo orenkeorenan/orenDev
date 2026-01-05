@@ -135,7 +135,14 @@ export default function HireMeModal({ open, onClose }) {
     return (
         <Modal open={open} onClose={handleClose}>
             {submitted ? (
-                <div style={{ textAlign: 'center', padding: '32px 0' }}>
+                <div 
+                    style={{ 
+                        textAlign: 'center', 
+                        padding: '32px 0',
+                        display:"flex",
+                        flexDirection:"column",
+                        gap:"1rem" 
+                    }}>
                     <h3 style={{ fontSize: '20px', fontWeight: 700 }}>
                         {t.successTitle}
                     </h3>
@@ -147,7 +154,7 @@ export default function HireMeModal({ open, onClose }) {
                         onClick={handleClose}
                         style={primaryButton}
                     >
-                        {actions.cancel}
+                        {actions.close}
                     </button>
                 </div>
             ) : (
