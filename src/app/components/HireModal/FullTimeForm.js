@@ -1,5 +1,7 @@
 import { useLanguage } from "@/app/context/LanguageContext"
 import { LANGUAGES } from "@/app/i18n"
+import Section from "./Section"
+import Input from "./Input"
 
 export default function FullTimeForm({ value, onChange }) {
   const { language } = useLanguage()

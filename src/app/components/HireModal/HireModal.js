@@ -76,26 +76,26 @@ export default function HireMeModal({ open, onClose }) {
     })
 
     function handleSubmit(e) {
-        e.preventDefault()
-        setIsSubmitting(true)
+    e.preventDefault()
+    setIsSubmitting(true)
 
-        const payload = {
-            intent,
-            language,
-            data: intent === 'fulltime' ? fulltimeData : freelanceData,
-        }
+    const payload = {
+        intent,
+        language,
+        data: intent === 'fulltime' ? fulltimeData : freelanceData,
+    }
 
-        fetch('/api/hire', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
+    fetch('/api/hire', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+    })
+        .then(res => {
+        if (!res.ok) throw new Error('Request failed')
+        setSubmitted(true)
         })
-            .then(res => {
-            if (!res.ok) throw new Error('Request failed')
-            setSubmitted(true)
-            })
-            .catch(() => alert('Something went wrong. Please try again.'))
-            .finally(() => setIsSubmitting(false))
+        .catch(() => alert('Something went wrong. Please try again.'))
+        .finally(() => setIsSubmitting(false))
     }
 
 
@@ -192,6 +192,9 @@ export default function HireMeModal({ open, onClose }) {
                                 ...primaryButton,
                                 opacity: isSubmitting || !isFormValid ? 0.5 : 1,
                                 cursor: isSubmitting || !isFormValid ? 'not-allowed' : 'pointer',
+                            }}
+                            onClick={()=>{
+                                console.log(fulltimeData)
                             }}
                         >
                             {isSubmitting ? actions.sending : actions.submit}
