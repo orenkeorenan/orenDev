@@ -10,6 +10,7 @@ export const en = {
     sending: 'Sending…',
   },
 
+
   hero: {
     titleIntro: 'Full-stack developer building production-ready web applications.',
     subTitleIntro:'Focused on system design, clean code, and building systems that scale and remain maintainable long-term.',
@@ -21,9 +22,12 @@ export const en = {
     skills: 'Skills',
     about: 'About',
     career: 'Career',
+    contact: 'Contact'
   },
 
   projects: {
+        summary:`Built with React and Node.js, focusing on real-world usability,
+            clean architecture, and long-term maintainability.`,
         manna: {
           title: 'Manna',
           subtitle:
@@ -84,6 +88,15 @@ export const en = {
           'Started self-taught web development through hands-on experimentation, trial and error, and building small internal projects.',
       },
     ],
+  },
+
+  contact: {
+    title: 'Contact',
+    description:
+      'I’m open to full-time, contract, or junior-level opportunities. If you think my skills fit your team or project, feel free to reach out.',
+    emailLabel: 'Email',
+    githubLabel: 'GitHub',
+    linkedinLabel: 'LinkedIn',
   },
 
 

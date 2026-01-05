@@ -23,6 +23,7 @@ export default function Input({ label, type = 'text', placeholder }) {
                     fontSize: '14px',
                     outline: 'none',
                 }}
+                required
             />
         </div>
     )

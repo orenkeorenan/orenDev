@@ -17,16 +17,7 @@ export default function HireMeModal({ open, onClose }) {
     const t = LANGUAGES[language].hireModal
     const actions = LANGUAGES[language].actions
 
-    function handleSubmit(e) {
-        e.preventDefault()
-        setIsSubmitting(true)
-
-        // TODO: replace with real API
-        setTimeout(() => {
-            setIsSubmitting(false)
-            setSubmitted(true)
-        }, 1200)
-    }
+    
 
     function handleClose() {
         setSubmitted(false)
@@ -62,6 +53,83 @@ export default function HireMeModal({ open, onClose }) {
         fontWeight: 500,
         cursor: 'pointer',
     }
+
+    const [fulltimeData, setFulltimeData] = useState({
+        companyName: "",
+        roleTitle: "",
+        workType: "",
+        location: "",
+        interviewDate: "",
+        email: "",
+        phoneNumber: "",
+    })
+
+    const [freelanceData, setFreelanceData] = useState({
+        companyClientName: "",
+        projectType: "",
+        scopeProjection: "",
+        timeline: "",
+        budgetRange: "",
+        dateAndTime: "",
+        timezone: "",
+        email: "",
+    })
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        setIsSubmitting(true)
+
+        const payload = {
+            intent,
+            language,
+            data: intent === 'fulltime' ? fulltimeData : freelanceData,
+        }
+
+        fetch('/api/hire', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+        })
+            .then(res => {
+            if (!res.ok) throw new Error('Request failed')
+            setSubmitted(true)
+            })
+            .catch(() => alert('Something went wrong. Please try again.'))
+            .finally(() => setIsSubmitting(false))
+    }
+
+
+
+    function isFulltimeValid(data) {
+        return (
+            data.companyName &&
+            data.roleTitle &&
+            data.workType &&
+            data.location &&
+            data.interviewDate &&
+            data.email &&
+            data.phoneNumber
+        )
+    }
+
+    function isFreelanceValid(data) {
+        return (
+            data.companyClientName &&
+            data.projectType &&
+            data.scopeProjection &&
+            data.timeline &&
+            data.budgetRange &&
+            data.dateAndTime &&
+            data.timezone &&
+            data.email
+        )
+    }
+
+    const isFormValid =
+        intent === 'fulltime'
+            ? isFulltimeValid(fulltimeData)
+            : isFreelanceValid(freelanceData)
+
 
 
     return (
@@ -99,8 +167,14 @@ export default function HireMeModal({ open, onClose }) {
                     />
 
                     {intent === 'fulltime'
-                        ? <FullTimeForm lang={language} />
-                        : <FreelanceForm lang={language} />}
+                        ?   <FullTimeForm 
+                                value={fulltimeData}
+                                onChange={setFulltimeData}
+                            />
+                        :   <FreelanceForm 
+                                value={freelanceData}
+                                onChange={setFreelanceData}
+                            />}
 
                     <div style={actionsRow}>
                         <button
@@ -113,11 +187,11 @@ export default function HireMeModal({ open, onClose }) {
 
                         <button
                             type="submit"
-                            disabled={isSubmitting}
+                            disabled={isSubmitting || !isFormValid}
                             style={{
                                 ...primaryButton,
-                                opacity: isSubmitting ? 0.7 : 1,
-                                cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                                opacity: isSubmitting || !isFormValid ? 0.5 : 1,
+                                cursor: isSubmitting || !isFormValid ? 'not-allowed' : 'pointer',
                             }}
                         >
                             {isSubmitting ? actions.sending : actions.submit}

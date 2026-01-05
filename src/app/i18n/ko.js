@@ -7,7 +7,9 @@ export const ko = {
     hireMe: '지원하기',
     submit: '제출',
     cancel: '취소',
+    sending: '전송 중…',
   },
+
 
   hero: {
     titleIntro: '프로덕션 환경에서 사용되는 웹 애플리케이션을 구축하는 풀스택 개발자입니다.',
@@ -15,16 +17,18 @@ export const ko = {
     image: '/hero-ko.png',
   },
 
-
-
   folders: {
     portfolio: '포트폴리오',
     skills: '기술',
     about: '소개',
     career: '경력',
+    contact: '연락처',
   },
 
   projects: {
+    summary: `React와 Node.js를 기반으로 실제 사용성을 중심에 두고,
+            깔끔한 아키텍처와 장기적인 유지보수성을 고려하여 구축되었습니다.`,
+
     manna: {
       title: 'Manna',
       subtitle:
@@ -85,6 +89,15 @@ export const ko = {
           '독학으로 웹 개발을 시작하여, 실험과 시행착오를 통해 기초부터 점진적으로 프로젝트를 구축해 왔습니다.',
       },
     ],
+  },
+  
+  contact: {
+    title: '연락처',
+    description:
+      '정규직, 계약직, 주니어 포지션 등 다양한 기회에 열려 있습니다. 제 역량이 팀이나 프로젝트에 적합하다고 느끼신다면 언제든지 연락 주세요.',
+    emailLabel: '이메일',
+    githubLabel: '깃허브',
+    linkedinLabel: '링크드인',
   },
 
  

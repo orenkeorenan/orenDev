@@ -32,9 +32,9 @@ export default function HomeClient() {
       <div 
         style={{ 
           padding: '2rem 0', 
-          maxWidth:"800px",
           alignItems: 'center' ,
-        }}>
+        }}
+      >
         <FolderTabs activeFolder={activeFolder} setActiveFolder={handleFolderChange} />
         <div 
           style={{ 

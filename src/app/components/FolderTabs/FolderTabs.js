@@ -1,6 +1,5 @@
 "use client"
 
-import React from 'react'
 import { FOLDERS } from '@/app/config/folders'
 import { useLanguage } from '@/app/context/LanguageContext';
 import { LANGUAGES } from '@/app/i18n';

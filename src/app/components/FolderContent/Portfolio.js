@@ -25,48 +25,53 @@ export default function Portfolio() {
                 color: "#555",
             }}
         >
-            Built with React and Node.js, focusing on real-world usability,
-            clean architecture, and long-term maintainability.
+            {t.summary}
         </div>
 
         {/* Project */}
-        <div
-            style={{
-                display: "flex",
-                gap: "1rem",
-                alignItems: "flex-start",
-            }}
-        >
-            <div
-                style={{
-                    width: "4rem",
-                    height: "4rem",
-                    borderRadius: "8px",
-                    backgroundColor: "#e5e5e5",
-                    flexShrink: 0,
-                }}
-            />
+        <div>
             <div
                 style={{
                     display: "flex",
-                    flexDirection: "column",
-                    gap: "0.35rem",
+                    gap: "1rem",
+                    alignItems: "flex-start",
                 }}
             >
-                <div style={{ fontSize: "1rem", fontWeight: 600 }}>
-                    {t.manna.title}
-                </div>
                 <div
                     style={{
-                        fontSize: "0.9rem",
-                        lineHeight: 1.5,
-                        color: "#666",
+                        width: "4rem",
+                        height: "4rem",
+                        borderRadius: "8px",
+                        backgroundColor: "#e5e5e5",
+                        flexShrink: 0,
+                    }}
+                />
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: "0.35rem",
                     }}
                 >
-                    {t.manna.subtitle}
+                    <div style={{ fontSize: "1rem", fontWeight: 600 }}>
+                        {t.manna.title}
+                    </div>
+                    <div
+                        style={{
+                            fontSize: "0.9rem",
+                            lineHeight: 1.5,
+                            color: "#666",
+                        }}
+                    >
+                        {t.manna.subtitle}
+                    </div>
                 </div>
             </div>
+            <div>
+                #NextJS #React #NodeJS #RESTAPI #MySQL #AuthFlow #GitHub #Vercel #Railway #WebApp #FullStackBasics
+            </div>
         </div>
+        
     </div>
   )
 }
