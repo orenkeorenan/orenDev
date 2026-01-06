@@ -153,6 +153,7 @@ export default function Portfolio() {
         <ProjectCard
             title={t.manna.title}
             subtitle={t.manna.subtitle}
+            logo="/Manna_logo.png"
             tags={[
                 "Next.js",
                 "React",
