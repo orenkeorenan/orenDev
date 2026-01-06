@@ -34,6 +34,11 @@ export const en = {
           subtitle:
             'A lightweight social platform that helps people create and join small meetups effortlessly — because meeting new people shouldn’t be complicated.',
         },
+        crud: {
+          title: 'CRUD',
+          subtitle:
+            'A simple CRUD system built to showcase data modeling, validation, and state management.',
+        },
   },
   
   skills: {

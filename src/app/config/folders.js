@@ -9,7 +9,7 @@ export const FOLDERS = [
     id: "portfolio",
     label: "Portfolio",
     Component: Portfolio,
-    paginated: true,
+    paginated: false,
     totalPages: 3,
   },
   {
