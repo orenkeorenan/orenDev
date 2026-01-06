@@ -26,8 +26,6 @@ function HeroIntro() {
                     height: '18rem',
                     borderRadius: '0.5rem',
                     display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
                 }}
             >
                 <img
@@ -35,8 +33,8 @@ function HeroIntro() {
                     alt="Profile"
                     style={{
                         width: '100%',
-                        height: '100%',
                         objectFit: 'cover',
+                        objectPosition: 'center top',
                     }}
                 />
             </div>
