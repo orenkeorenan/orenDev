@@ -165,7 +165,7 @@ export default function Portfolio() {
               "WhatsApp API Integration",
               "Responsive Design",
               "UX-driven Flow",
-              "Vercel Deployment",
+              "Vercel Deployment"
             ]}
 
         />
