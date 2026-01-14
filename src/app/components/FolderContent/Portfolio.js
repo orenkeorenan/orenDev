@@ -151,6 +151,25 @@ export default function Portfolio() {
 
         {/* Project card */}
         <ProjectCard
+            title={t.dellaFleur.title}
+            subtitle={t.dellaFleur.subtitle}
+            link="https://della-fleur.vercel.app/"
+            logo="/DellaFleur_logo.png"
+            tags={[
+              "Next.js App Router",
+              "React",
+              "Client Components",
+              "State Management",
+              "Dynamic Forms",
+              "Conditional UI",
+              "WhatsApp API Integration",
+              "Responsive Design",
+              "UX-driven Flow",
+              "Vercel Deployment",
+            ]}
+
+        />
+        <ProjectCard
             title={t.manna.title}
             subtitle={t.manna.subtitle}
             link="https://manna-testing.vercel.app/"

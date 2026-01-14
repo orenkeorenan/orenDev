@@ -29,6 +29,11 @@ export const ko = {
   projects: {
     summary: `React와 Node.js를 기반으로 실제 사용성을 중심에 두고,
             깔끔한 아키텍처와 장기적인 유지보수성을 고려하여 구축되었습니다.`,
+    dellaFleur:{
+          title: 'DellaFleur',
+          subtitle:
+            'WhatsApp 기반 주문/결제 시스템과 동적 상품 구성 기능을 갖춘 모바일 중심 플로리스트 웹 애플리케이션',
+        },        
 
     manna: {
       title: 'Manna',

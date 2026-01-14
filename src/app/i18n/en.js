@@ -29,6 +29,11 @@ export const en = {
   projects: {
         summary:`Built with React and Node.js, focusing on real-world usability,
             clean architecture, and long-term maintainability.`,
+        dellaFleur:{
+          title: 'DellaFleur',
+          subtitle:
+            'A modern florist web app featuring WhatsApp-based checkout and dynamic product customization.',
+        },
         manna: {
           title: 'Manna',
           subtitle:
